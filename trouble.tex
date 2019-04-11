@@ -39,7 +39,7 @@
     \else \renewcommand{\textBody}{#2}%
     \fi%
 	\textLog{#2 \if x#1 \space --- completo em \DTMusedate{done:\thetroublecounter} \fi}{\thetroublecounter}%
-	\textcolor{ocre}{\textbf{\textBody}}%
+	\textcolor{red}{\textbf{\textBody}}%
 }
 
 % List all trouble inputs
@@ -48,6 +48,6 @@
 	\foreach \x in {1,...,\value{troublecounter}}
 		{
         \flushleft
-        \hyperlink{\x}{\textcolor{dark-grey}{\footnotesize \x} \space \textcolor{ocre}{\ref{\x}}}\\       
+        \hyperlink{\x}{\textcolor{gray}{\footnotesize \x} \space \textcolor{red}{\ref{\x}}}\\       
         }
 }

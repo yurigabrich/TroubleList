@@ -1,0 +1,53 @@
+% _________________________________________________________________
+% SPDX-License-Identifier: MIT License
+% For more information check at: https://spdx.org/licenses/MIT.html
+% 
+% Copyright (C) 2018
+% Yuri Bastos Gabrich <yuribgabrich[at]gmail.com>
+% _________________________________________________________________
+
+%--------------------------------------------------------------------
+%	TROUBLE LIST BEHAVIOR
+%--------------------------------------------------------------------
+
+\usepackage{pgffor}             % required for \foreach
+\usepackage[showdow]{datetime2} % required to save dates
+\DTMsetstyle{ddmmyyyy}
+
+% Counting Troubles
+\newcounter{troublecounter}
+
+% Variables to show/hide text and keep record of troubleshooting
+\def \textBody {}           % Text on the document that will be
+                            % hidden when Trouble is overcome.
+
+% Text that will fill the Trouble list.
+\makeatletter
+\newcommand{\textLog}[2]{
+  \protected@edef\@currentlabel{#1}% Set target label
+  \phantomsection% Correct hyper reference link
+  \label{#2}% Print and store label
+}
+\makeatother
+
+% The trouble environment
+\newcommand{\trouble}[2][]{%
+    % When the first argument (that is optional) is marked with the letter 'x',
+    % the Trouble "disappears" on paragraph context, but continues on the list context.
+    \refstepcounter{troublecounter}%
+    \if x#1 \renewcommand{\textBody}{} \DTMsavenow{done:\thetroublecounter}%
+    \else \renewcommand{\textBody}{#2}%
+    \fi%
+	\textLog{#2 \if x#1 \space --- completo em \DTMusedate{done:\thetroublecounter} \fi}{\thetroublecounter}%
+	\textcolor{ocre}{\textbf{\textBody}}%
+}
+
+% List all trouble inputs
+\newcommand{\listoftroubles}{
+    \noindent
+	\foreach \x in {1,...,\value{troublecounter}}
+		{
+        \flushleft
+        \hyperlink{\x}{\textcolor{dark-grey}{\footnotesize \x} \space \textcolor{ocre}{\ref{\x}}}\\       
+        }
+}

@@ -10,6 +10,8 @@
 %	TROUBLE LIST BEHAVIOR
 %--------------------------------------------------------------------
 
+\usepackage{xcolor}		% required for \textcolor
+\usepackage{hyperref}		% required for \hyperlink
 \usepackage{pgffor}             % required for \foreach
 \usepackage[showdow]{datetime2} % required to save dates
 \DTMsetstyle{ddmmyyyy}
@@ -39,7 +41,8 @@
     \else \renewcommand{\textBody}{#2}%
     \fi%
 	\textLog{#2 \if x#1 \space --- completo em \DTMusedate{done:\thetroublecounter} \fi}{\thetroublecounter}%
-	\textcolor{red}{\textbf{\textBody}}%
+	\text
+	{red}{\textbf{\textBody}}%
 }
 
 % List all trouble inputs

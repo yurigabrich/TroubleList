@@ -2,20 +2,44 @@
 
 Track changes of troubled texts left behind.
 
-# How to use
+## How to use
 
-1. Copy the [trouble.tex](https://github.com/yurigabrich/TroubleList/blob/master/trouble.tex) file into your LaTeX workspace.
+1. Insert the [trouble.tex](https://github.com/yurigabrich/TroubleList/blob/master/trouble.tex) file into your LaTeX workspace.
 2. Load the aforementioned file in the preamble (you may use `\input{trouble}`).
-3. Tag a piece of text using `\trouble[optional argument]{Enter your highlight troubled text here}`. Check the trouble as finished passing the optional argument value of `x`.
+3. Tag a piece of text using `\trouble[optional argument]{Enter your highlight troubled text here}`.
+> 3.1 Check the trouble as finished passing the optional argument value of `x`.
 4. To get a list of troubles use `\listoftroubles`.
 
-# To-Do
+### Example of use
+
+```latex
+\documentclass{article}
+\input{trouble.tex}
+
+\begin{document}
+
+\section{Example of use}
+
+Although this fancy workaround solves the problem, it is expensive \trouble{(looking for seed funding)}. % pending trouble
+
+However the team is fantastic! \trouble[x]{(a human-centered business strategist is still missing)} % trouble solved
+
+\section{List of troubles}
+
+\listoftroubles
+
+\end{document}
+```
+
+> [Open the MWE in Overleaf](https://www.overleaf.com/docs?snip_uri[]=https://github.com/yurigabrich/TroubleList/blob/master/example.zip?raw=true)
+
+## To-Do
 
 - [ ] Update the way dependency packages are defined.
 - [ ] Include options to customize colors.
 - [ ] Include dependency package of colors to allow custom colors.
 
-# REFs
+## REFs
 
 - https://tex.stackexchange.com/questions/168832/using-hypertarget-caption-in-hyperlink-caption
 - https://tex.stackexchange.com/questions/244694/writing-to-aux-you-cant-use-a-prefix-with-the-character

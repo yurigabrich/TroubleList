@@ -6,8 +6,10 @@ Track changes of troubled texts left behind.
 
 1. Insert the [trouble.tex](https://github.com/yurigabrich/TroubleList/blob/master/trouble.tex) file into your LaTeX workspace.
 2. Load the aforementioned file in the preamble (you may use `\input{trouble}`).
-3. Tag a piece of text using `\trouble[optional argument]{Enter your highlight troubled text here}`.
-> 3.1 Check the trouble as finished passing the optional argument value of `x`.
+3. <details>
+     <summary>Tag a piece of text using <code>\trouble[optional argument]{Enter your highlight troubled text here}</code>.</summary>
+     <p>Check the trouble as finished passing the optional argument value of <code>x</code>.</p>
+   </details>
 4. To get a list of troubles use `\listoftroubles`.
 
 ### Example of use
@@ -31,7 +33,10 @@ However the team is fantastic! \trouble[x]{(a human-centered business strategist
 \end{document}
 ```
 
-> [Open the MWE in Overleaf](https://www.overleaf.com/docs?snip_uri[]=https://github.com/yurigabrich/TroubleList/blob/master/example.zip?raw=true)
+<table><tr><td>
+  <a href="https://www.overleaf.com/docs?snip_uri[]=https://github.com/yurigabrich/TroubleList/blob/master/example.zip?raw=true">Open the MWE in Overleaf</a>
+</td></tr></table>
+
 
 ## To-Do
 

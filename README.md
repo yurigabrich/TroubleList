@@ -1,3 +1,9 @@
+:warning:
+An already established and complete package was found, the **todonotes**! Let's move efforts to contribute to whatever this project may need.
+Its documentation is available at [CTAN](https://www.ctan.org/pkg/todonotes) and also at [GitHub](https://github.com/henrikmidtiby/todonotes).
+
+---
+
 # TroubleList
 
 Track changes of troubled texts left behind.
